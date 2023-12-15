@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Injeciton</title>
+
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            /* 100% of the viewport height */
+            margin: 0;
+            /* Remove default margin to ensure full page coverage */
+        }
+
+        form {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <form action="{{ url_for('search') }}" method="post">
+        <h1>Search Students</h1>
+        {{ form.hidden_tag() }}
+        <p>{{ form.student_name.label }}</p>
+        <p>{{ form.student_name() }}</p>
+        <p>{{ form.submit() }}</p>
+    </form>
+</body>
+
+</html>
